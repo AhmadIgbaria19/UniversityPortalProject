@@ -37,19 +37,19 @@
 ![Login](/images/login.png)
 
 **Student — My Courses (cards)**  
-![Student Dashboard](images\student.png)
+![Student Dashboard](/images\student.png)
 
 **Student — Course Registration**  
-![Course Registration](images\courses.png)
+![Course Registration](/images\courses.png)
 
 **Student — Course Page (Files · Homework · Forum)**  
-![Student Course](images\coursepage.png)
+![Student Course](/images\coursepage.png)
 
 **Lecturer — Course Management**  
-![Lecturer Dashboard](images\lecturer.png)
+![Lecturer Dashboard](/images\lecturer.png)
 
 **Admin — Dashboard & Tickets**  
-![Admin Dashboard](images\admin.png)
+![Admin Dashboard](/images\admin.png)
 
 <br/>
 
