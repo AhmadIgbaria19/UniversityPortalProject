@@ -1,6 +1,6 @@
 University Portal
 
-🎥 7-minute product demo
+🎥 7-minute product demo ( https://www.youtube.com/watch?v=j7cswS5_og4 )
 
 A full university portal for Students, Lecturers, and Admin.
 Students register for courses, download materials, submit homework, check grades & tuition, and message via a course forum.
