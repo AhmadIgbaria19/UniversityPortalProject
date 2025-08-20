@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign in</title>
+  <link rel="stylesheet" href="login.css">
+  <!-- icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="login-wrapper">
+    
+    <!-- Left side - Logo -->
+    <div class="logo-section">
+      <img src="C:\Users\King\Documents\NewProject\images\background-login.png" alt="Logo">
+    </div>
+
+    <!-- Right side - Form -->
+    <div class="form-section">
+      <div class="login-container">
+        <h2>Sign in</h2>
+        <form id="loginForm">
+          
+          <div class="input-group">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="email" placeholder="Email" required>
+          </div>
+          
+          <div class="input-group">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="password" placeholder="Password" required>
+          </div>
+          
+          <button type="submit"><i class="fa-solid fa-right-to-bracket"></i> Sign in</button>
+        </form>
+
+        <div class="extra-links">
+          <label><input type="checkbox"> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <p id="error" class="error-msg"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

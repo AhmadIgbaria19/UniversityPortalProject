@@ -1,0 +1,224 @@
+:root{
+   --bg:#121a2d;
+  --bg2:#2c2f35;          /* slate-900 */
+  --panel:#111827;        /* gray-900 */
+  --muted:#94a3b8;        /* slate-400 */
+  --text:#e5e7eb;         /* gray-200 */
+  --border:#1f2937;       /* gray-800 */
+  --accent:#2563eb;       /* blue-600 */
+  --accent-2:#1d4ed8;     /* blue-700 */
+  --ok:#22c55e;           /* green-500 */
+}
+
+*{ box-sizing:border-box; }
+html,body{
+  height:100%;
+  margin:0;
+  padding:0;
+  font-family: Inter, "Segoe UI", Roboto, Arial, system-ui, sans-serif;
+  color:var(--text);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+}
+
+/* Layout */
+.page{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.topbar h1{
+  margin:0;
+  font-size:26px;
+  font-weight:800;
+}
+
+.topbar-actions{ display:flex; gap:10px; }
+
+/* Grid */
+.content-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:16px;
+}
+.card-wide{ grid-column: 1 / -1; }
+
+/* Card */
+.card{
+  background: linear-gradient(180deg, rgba(17,24,39,0.88), rgba(2,6,23,0.9));
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+  overflow:hidden;
+  backdrop-filter: blur(6px);
+}
+
+.card-head{
+  padding:16px 18px;
+  border-bottom:1px solid var(--border);
+}
+.card-head h2{
+  margin:0;
+  font-size:18px;
+  font-weight:700;
+}
+
+.card-body{
+  padding:18px;
+}
+
+/* Controls */
+input[type="text"], input[type="date"], input[type="number"], input[type="file"], textarea{
+  width:100%;
+  background:#0b1022;
+  border:1px solid var(--border);
+  color:var(--text);
+  border-radius:12px;
+  padding:10px 12px;
+  outline:none;
+}
+
+textarea{
+  resize:none;
+  min-height:84px;
+  margin-top:10px;
+}
+
+.upload-row{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-bottom:8px;
+  flex-wrap:wrap;
+}
+
+.hw-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap:10px;
+  margin-bottom:8px;
+}
+.hw-grid .btn{ grid-column: 1 / -1; }
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid transparent;
+  background:var(--accent);
+  color:#fff;
+  cursor:pointer;
+  transition: background .18s ease, transform .06s ease, border-color .18s ease;
+  text-decoration:none;
+}
+.btn:hover{ background:var(--accent-2); }
+.btn:active{ transform: translateY(1px); }
+
+.btn.ghost{
+  background:transparent;
+  border-color:var(--border);
+  color:var(--text);
+}
+.btn.ghost:hover{
+  background:#0b1022;
+  border-color:#2a3b8f;
+}
+
+/* Lists */
+.section-sub{
+  margin:12px 0 8px;
+  font-size:15px;
+  color:var(--muted);
+  font-weight:600;
+}
+
+.list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.list li{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  background:#0b1022;
+  border-radius:12px;
+}
+.list li a{
+  color:#cbd5e1;
+  text-decoration:none;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  max-width:70%;
+}
+.list li .row-actions{
+  display:flex; gap:8px;
+}
+.list li .row-actions button{
+  padding:8px 10px;
+  border-radius:10px;
+}
+
+/* Messages */
+.messages{
+  max-height: 260px;
+  overflow-y:auto;
+  background:#0b1022;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+  margin-bottom:8px;
+}
+.messages .msg-item{
+  padding:8px 10px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  margin-bottom:8px;
+  background:rgba(2,6,23,0.65);
+}
+.messages .msg-item .meta{
+  font-size:12px; color:var(--muted); margin-bottom:4px;
+}
+
+/* Table */
+.table-wrap{ overflow:auto; }
+.table{
+  width:100%;
+  border-collapse:collapse;
+  border:1px solid var(--border);
+}
+.table th, .table td{
+  border-bottom:1px solid var(--border);
+  padding:10px 12px;
+  text-align:center;
+}
+.table thead th{
+  position:sticky; top:0;
+  background:#0b1022;
+  font-weight:700;
+}
+
+/* Misc */
+.hint{ color:var(--muted); margin:6px 0; }
+
+@media (max-width: 900px){
+  .content-grid{ grid-template-columns: 1fr; }
+}

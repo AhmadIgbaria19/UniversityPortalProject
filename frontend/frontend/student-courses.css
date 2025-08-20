@@ -1,0 +1,60 @@
+:root{
+  --bg:#0b1022; --bg2:#0f172a; --panel:#111827; --text:#e5e7eb;
+  --muted:#94a3b8; --border:#1f2937; --accent:#2563eb; --accent-2:#1d4ed8;
+}
+
+*{ box-sizing:border-box; }
+html,body{
+  margin:0; height:100%;
+  font-family: Inter,"Segoe UI",Arial,sans-serif;
+  color:var(--text);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+}
+
+.page{ max-width:1100px; margin:0 auto; padding:24px; }
+.topbar{
+  display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:14px;
+}
+.titles h1{ margin:0; font-size:28px; font-weight:800; }
+.titles .muted{ margin:2px 0 0; color:var(--muted); }
+
+.card{
+  background: linear-gradient(180deg, rgba(17,24,39,.86), rgba(2,6,23,.9));
+  border:1px solid var(--border); border-radius:18px; padding:18px;
+  box-shadow:0 14px 36px rgba(0,0,0,.35);
+  margin-bottom:14px;
+}
+.card h2{ margin:0 0 10px; }
+
+.table-wrap{ overflow:auto; border-radius:12px; border:1px solid var(--border); }
+table{ width:100%; border-collapse:collapse; min-width:640px; }
+thead th{
+  background:#0c1228; color:#bcd7ff; text-align:left; font-weight:800; padding:12px;
+  border-bottom:1px solid var(--border);
+}
+tbody td{
+  padding:12px; border-bottom:1px solid var(--border); color:#e6eefc;
+}
+tbody tr:hover{ background:#0b1022; }
+
+.row{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+select{
+  padding:10px 12px; border-radius:12px; border:1px solid var(--border);
+  background:#0b1022; color:var(--text); min-width:280px; outline:none;
+}
+select:focus{ border-color:#2a3b8f; background:#0c1228; }
+
+.btn{
+  padding:10px 14px; border-radius:12px; border:1px solid var(--border);
+  background:transparent; color:var(--text); cursor:pointer; text-decoration:none;
+  transition:.18s ease; display:inline-flex; gap:8px; align-items:center;
+}
+.btn:hover{ background:#0b1022; border-color:#2a3b8f; }
+.btn.primary{
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-color:transparent; color:#fff;
+}
+
+.msg{ margin:10px 0 0; color:var(--muted); }
+.msg.ok{ color:#baf7c7; }
+.msg.err{ color:#ffb4b4; }

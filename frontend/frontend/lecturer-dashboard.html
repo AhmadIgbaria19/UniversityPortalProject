@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lecturer Dashboard</title>
+  <link rel="stylesheet" href="lecturer-dashboard.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="logo">🎓</span>
+        <h2>Welcome, Lecturer</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="lecturer-dashboard.html" class="active">My Courses</a></li>
+          <li><a href="#" onclick="logout()">Log out</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+      <header class="header">
+        <h1>My Courses</h1>
+        <div class="tools">
+          <input id="searchInput" type="text" placeholder="Search by course name..." />
+        </div>
+      </header>
+
+      <p id="msg" class="msg"></p>
+
+      <!-- Cards Grid -->
+      <section id="coursesGrid" class="cards-grid">
+        <!-- Course cards will be injected here -->
+      </section>
+    </main>
+  </div>
+
+  <script src="lecturer-dashboard.js"></script>
+</body>
+</html>

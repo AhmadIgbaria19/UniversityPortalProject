@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Courses</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="student-courses.css" />
+  <script src="student-courses.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="titles">
+        <h1>Student Courses</h1>
+        <p class="muted">View enrolled courses and register new ones</p>
+      </div>
+      <a class="btn ghost" href="students-list.html"><i class="fa-solid fa-arrow-left"></i> Back to Students</a>
+    </header>
+
+    <section class="card">
+      <h2>Enrolled Courses</h2>
+      <div class="table-wrap">
+        <table id="enrolledTable">
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Lecturer</th>
+              <th>Schedule</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <p id="msgEnrolled" class="msg"></p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Register to a New Course</h2>
+      <div class="row">
+        <select id="availableCoursesSelect">
+          <option value="" selected disabled>— Select a course —</option>
+        </select>
+        <button class="btn primary" onclick="enrollToCourse()">
+          <i class="fa-solid fa-plus"></i> Enroll
+        </button>
+      </div>
+      <p id="msgRegister" class="msg"></p>
+    </section>
+  </div>
+</body>
+</html>

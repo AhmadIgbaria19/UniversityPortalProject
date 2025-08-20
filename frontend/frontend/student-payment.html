@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tuition Payment | Student</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="student-payment.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <h1>Tuition Payment</h1>
+      <div class="summary">
+        <span id="total" class="total-chip">Total: ₪0</span>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="table-wrap">
+        <table id="tuitionTable" class="table">
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Lecturer</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filled dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="statusMsg" class="msg" role="status"></div>
+
+      <div class="actions">
+        <button class="btn" id="payBtn" type="button">Pay Now</button>
+        <button class="btn ghost" type="button" onclick="goBack()">← Back to Dashboard</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="student-payment.js"></script>
+</body>
+</html>

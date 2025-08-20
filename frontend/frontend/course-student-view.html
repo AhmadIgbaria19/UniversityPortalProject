@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Course • Student</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="course-student-view.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="title">
+        <h1 id="courseTitle">Course Name</h1>
+        <p class="muted">Your course space</p>
+      </div>
+      <button class="btn ghost" type="button" onclick="goBack()">← Back to My Courses</button>
+    </header>
+
+    <!-- Meta -->
+    <section class="card course-meta">
+      <div class="meta-grid">
+        <div class="meta-item">
+          <div class="label">Lecturer</div>
+          <div class="value" id="lecturerName">—</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">Schedule</div>
+          <div class="value" id="schedule">—</div>
+        </div>
+        <div class="meta-item">
+          <div class="label">My Grade</div>
+          <div class="value" id="studentGrade">No Grade</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Files -->
+    <section class="card">
+      <h2>📂 Course Files</h2>
+      <ul id="filesList" class="list"></ul>
+    </section>
+
+    <!-- Homeworks -->
+    <section class="card">
+      <h2>📝 Homework Assignments</h2>
+      <div id="homeworkList" class="hw-list"></div>
+    </section>
+
+    <!-- Forum -->
+    <section class="card">
+      <h2>💬 Forum</h2>
+      <div id="messagesBox" class="forum"></div>
+      <div class="composer">
+        <textarea id="messageInput" rows="3" placeholder="Write a message to the lecturer…"></textarea>
+        <button class="btn primary" type="button" onclick="sendMessage()">Send</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="course-student-view.js"></script>
+</body>
+</html>

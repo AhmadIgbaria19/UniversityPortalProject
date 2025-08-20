@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage Courses & Enrollments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="manage-courses.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="titles">
+        <h1>Manage Courses & Enrollments</h1>
+        <p class="muted">Create, edit, and monitor course offers</p>
+      </div>
+      <div class="right-tools">
+        <a class="btn ghost" href="admin-dashboard.html"><i class="fa-solid fa-arrow-left"></i> Back</a>
+        <a class="btn primary" href="add-course.html"><i class="fa-solid fa-plus"></i> Add New Course</a>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="toolbar">
+        <input id="searchInput" type="text" placeholder="Search by course or lecturer…"/>
+        <select id="lecturerFilter">
+          <option value="">All lecturers</option>
+        </select>
+        <button id="exportBtn" class="btn">Export CSV</button>
+        <span id="countChip" class="chip">0 courses</span>
+      </div>
+
+      <p id="msg" class="msg">Loading…</p>
+
+      <!-- Cards grid -->
+      <div id="cardsGrid" class="cards"></div>
+    </section>
+  </div>
+
+  <!-- Add Seats Modal -->
+  <div id="seatsModal" class="modal" hidden>
+    <div class="modal-dialog">
+      <h3>Add Seats</h3>
+      <p id="modalCourseTitle" class="muted"></p>
+      <label for="seatsInput">How many seats to add?</label>
+      <input id="seatsInput" type="number" min="1" step="1" placeholder="e.g., 5" />
+      <div class="actions">
+        <button class="btn" id="cancelModal">Cancel</button>
+        <button class="btn primary" id="confirmSeats">Confirm</button>
+      </div>
+    </div>
+    <div class="modal-backdrop"></div>
+  </div>
+
+  <script src="manage-courses.js" defer></script>
+</body>
+</html>

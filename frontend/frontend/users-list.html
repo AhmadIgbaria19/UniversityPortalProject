@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Users</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="users-list.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <script src="users-list.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="titles">
+        <h1>Users</h1>
+        <p class="muted">View and manage all users</p>
+      </div>
+      <a class="btn ghost" href="admin-dashboard.html"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </header>
+
+    <section class="card">
+      <div class="toolbar">
+        <input id="searchInput" type="text" placeholder="Search by name or email…" />
+        <select id="roleFilter">
+          <option value="">All roles</option>
+        </select>
+        <button id="exportBtn" class="btn">Export CSV</button>
+        <button class="btn primary" onclick="goToAddUser()"><i class="fa-solid fa-user-plus"></i> Add User</button>
+        <span id="usersCount" class="chip">0 users</span>
+      </div>
+
+      <p id="msg" class="msg">Loading…</p>
+
+      <div class="table-wrap">
+        <table id="usersTable">
+          <thead>
+            <tr>
+              <th data-sort="full_name">Full Name</th>
+              <th data-sort="email">Email</th>
+              <th data-sort="role">Role</th>
+            </tr>
+          </thead>
+          <tbody id="usersTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

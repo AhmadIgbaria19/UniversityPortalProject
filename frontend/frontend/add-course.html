@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add Course</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="add-course.css" />
+  <script src="add-course.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="titles">
+        <h1>Add New Course</h1>
+        <p class="muted">Create a new course offer</p>
+      </div>
+      <div class="right-tools">
+        <a class="btn ghost" href="manage-courses.html"><i class="fa-solid fa-arrow-left"></i> Back to Manage</a>
+      </div>
+    </header>
+
+    <section class="card">
+      <form id="addCourseForm" novalidate>
+        <div class="field">
+          <label for="courseName">Course name</label>
+          <div class="input-group">
+            <span class="icon"><i class="fa-solid fa-book"></i></span>
+            <input type="text" id="courseName" placeholder="e.g., Introduction to Programming" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="lecturer">Lecturer</label>
+          <div class="input-group">
+            <span class="icon"><i class="fa-solid fa-chalkboard-user"></i></span>
+            <select id="lecturer" required>
+              <option value="">— Select lecturer —</option>
+              <!-- Filled dynamically -->
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="schedule">Schedule</label>
+          <div class="input-group">
+            <span class="icon"><i class="fa-regular fa-calendar"></i></span>
+            <input type="text" id="schedule" placeholder="e.g., Sun 10:00–12:00" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="price">Price (₪)</label>
+            <div class="input-group">
+              <span class="icon"><i class="fa-solid fa-shekel-sign"></i></span>
+              <input type="number" id="price" min="0" step="1" placeholder="e.g., 1200" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="maxSeats">Max seats</label>
+            <div class="input-group">
+              <span class="icon"><i class="fa-solid fa-chair"></i></span>
+              <input type="number" id="maxSeats" min="1" step="1" placeholder="e.g., 30" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="submitBtn" type="submit" class="btn primary">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="btn-text"><i class="fa-solid fa-plus"></i> Add Course</span>
+          </button>
+          <p id="message" class="msg" role="alert"></p>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+</html>

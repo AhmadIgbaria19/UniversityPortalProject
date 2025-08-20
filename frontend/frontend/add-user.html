@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Add New User</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="add-user.css" />
+  <script src="add-user.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="titles">
+        <h1>Add New User</h1>
+        <p class="muted">Create a new account for a student or lecturer</p>
+      </div>
+      <a class="btn ghost" href="users-list.html"><i class="fa-solid fa-arrow-left"></i> Back to Users</a>
+    </header>
+
+    <section class="card">
+      <form id="addUserForm" novalidate>
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <div class="input-group">
+            <span class="icon"><i class="fa-regular fa-id-card"></i></span>
+            <input type="text" id="fullName" placeholder="e.g., Ahmad Igbaria" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <div class="input-group">
+            <span class="icon"><i class="fa-regular fa-envelope"></i></span>
+            <input type="email" id="email" placeholder="name@example.com" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="username">Username</label>
+            <div class="input-group">
+              <span class="icon"><i class="fa-solid fa-user"></i></span>
+              <input type="text" id="username" placeholder="username" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="role">Role</label>
+            <div class="input-group">
+              <span class="icon"><i class="fa-solid fa-shield"></i></span>
+              <select id="role" required>
+                <option value="student">Student</option>
+                <option value="lecturer">Lecturer</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-group">
+            <span class="icon"><i class="fa-solid fa-lock"></i></span>
+            <input type="password" id="password" placeholder="Minimum 6 characters" required />
+            <button class="eye" type="button" id="togglePwd" aria-label="Show/Hide password">
+              <i class="fa-regular fa-eye"></i>
+            </button>
+          </div>
+          <small id="pwdHint" class="hint">Use at least 6 characters.</small>
+        </div>
+
+        <div class="actions">
+          <button id="submitBtn" type="submit" class="btn primary">
+            <span class="spinner" aria-hidden="true"></span>
+            <span class="btn-text">Save</span>
+          </button>
+          <p id="message" class="msg" role="alert"></p>
+        </div>
+      </form>
+    </section>
+  </div>
+</body>
+</html>

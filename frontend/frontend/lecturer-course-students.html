@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>סטודנטים רשומים</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="lecturer-course-students.css">
+  <script src="lecturer-course-students.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <h1>סטודנטים בקורס</h1>
+      <div class="tools">
+        <input id="searchInput" type="text" placeholder="חיפוש לפי שם או מייל…"/>
+        <button class="btn" id="exportBtn">ייצוא CSV</button>
+        <span class="chip" id="studentCount">0 סטודנטים</span>
+      </div>
+    </header>
+
+    <section class="card">
+      <p id="msg" class="msg">טוען…</p>
+      <div class="table-wrap">
+        <table id="studentsTable">
+          <thead>
+            <tr>
+              <th data-sort="full_name">שם מלא</th>
+              <th data-sort="email">מייל</th>
+              <th data-sort="enrolled_at">תאריך הרשמה</th>
+              <th data-sort="grade">ציון</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="contact-admin.css" />
+  <!-- Optional icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <h1>Contact Admin</h1>
+      <div class="tools">
+        <select id="statusFilter" aria-label="Filter by status">
+          <option value="">All tickets</option>
+          <option value="open">Open</option>
+          <option value="closed">Closed</option>
+        </select>
+        <span id="openCount" class="chip warn">Open: 0</span>
+        <span id="closedCount" class="chip ok">Closed: 0</span>
+      </div>
+    </header>
+
+    <!-- Tickets timeline -->
+    <section class="card">
+      <h2 class="section-title">📝 Your Tickets</h2>
+      <div id="previousMessagesContainer" class="timeline" aria-live="polite">
+        <!-- Filled dynamically -->
+      </div>
+      <p id="listMsg" class="msg"></p>
+    </section>
+
+    <!-- New ticket form -->
+    <section class="card">
+      <h2 class="section-title">📨 Submit a New Ticket</h2>
+      <form id="contactForm" class="form" novalidate>
+        <div class="textarea-wrap">
+          <textarea
+            id="message"
+            placeholder="Write your message here…"
+            minlength="5"
+            maxlength="1000"
+            required
+          ></textarea>
+          <div class="meta-row">
+            <span id="charCounter" class="muted">0/1000</span>
+            <span class="hint">Ctrl/⌘ + Enter to send</span>
+          </div>
+        </div>
+        <div class="actions">
+          <button type="submit" id="sendBtn" class="btn">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </div>
+        <p id="statusMsg" class="msg" role="status"></p>
+      </form>
+    </section>
+
+    <div class="footer-actions">
+      <button class="btn ghost" type="button" onclick="window.location.href='student-dashboard.html'">← Back to Dashboard</button>
+    </div>
+  </div>
+
+  <script src="contact-admin.js"></script>
+</body>
+</html>

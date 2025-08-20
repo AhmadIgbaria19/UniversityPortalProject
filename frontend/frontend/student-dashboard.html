@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="student-dashboard.css" />
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="logo">🎓</span>
+<!-- בתוך ה-sidebar -->
+        <h2>Welcome, <span id="sidebarName">Student</span></h2>
+        </div>
+      <ul>
+        <li><a href="student-profile.html">Profile</a></li>
+        <li><a href="student-dashboard.html" class="active">My Courses</a></li>
+        <li><a href="course-registration.html">Course Registration</a></li>
+        <li><a href="student-payment.html">Tuition</a></li>
+        <li><a href="student-grades.html">Grades</a></li>
+        <li><a href="contact-admin.html">Contact Admin</a></li>
+        <li><a href="student-contact.html">Support</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <h1>My Courses</h1>
+        <div class="tools">
+          <input id="searchInput" type="text" placeholder="Search by course name..." />
+        </div>
+      </header>
+
+      <!-- Welcome Box -->
+      <div class="welcome-box">
+        <!-- אם תרצה, אפשר להחליף לנתיב יחסי: images/PortalImage.png -->
+        <img src="C:\Users\King\Documents\NewProject\images\PortalImage.png" alt="Portal" />
+        <div class="text">
+          <h3>Welcome back, <span id="welcomeName">Student</span>!</h3>
+          <p>Stay up to date in your student portal.</p>
+          <p class="muted">Last login: <span id="lastLogin">Loading...</span></p>
+        </div>
+      </div>
+
+      <!-- Courses Cards -->
+      <section>
+        <div id="myCourses" class="course-grid">
+          <!-- Courses will be dynamically inserted -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="student-dashboard.js"></script>
+</body>
+</html>

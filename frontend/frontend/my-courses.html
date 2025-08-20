@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>الكورسات الخاصة بي</title>
+  <link rel="stylesheet" href="my-courses.css">
+</head>
+<body>
+  <div class="container">
+    <h2>הקורסים שלי</h2>
+    <p id="msg" class="msg"></p>
+    <table id="myCoursesTable">
+      <thead>
+        <tr>
+          <th>اسم الكورس</th>
+          <th>المحاضر</th>
+          <th>الموعد</th>
+          <th>رابط صفحة הקורס</th>
+        </tr>
+      </thead>
+      <tbody id="coursesBody">
+        <!-- الصفوف ستملأ هنا -->
+      </tbody>
+    </table>
+    <button onclick="goBack()">رجوع</button>
+  </div>
+
+  <script>
+    const studentId = localStorage.getItem('studentId');
+
+    async function fetchMyCourses() {
+      try {
+        const response = await fetch(`http://localhost:3000/api/my-courses/${studentId}`);
+        const data = await response.json();
+
+        if (!data.success || data.data.length === 0) {
+          document.getElementById('msg').innerText = 'لا توجد كورسات مسجلة حاليا.';
+          return;
+        }
+
+        const tbody = document.getElementById('coursesBody');
+        data.data.forEach(course => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${course.name}</td>
+            <td>${course.lecturer}</td>
+            <td>${course.schedule}</td>
+            <td>
+              <a href="course-student-view.html?offer_id=${course.offer_id}&student_id=${studentId}">
+                الانتقال
+              </a>
+            </td>
+          `;
+          tbody.appendChild(row);
+        });
+
+      } catch (err) {
+        console.error('Error fetching courses:', err);
+        document.getElementById('msg').innerText = 'حدث خطأ أثناء جلب الكورسات.';
+      }
+    }
+
+    function goBack() {
+      window.location.href = "student-dashboard.html";
+    }
+
+    fetchMyCourses();
+  </script>
+</body>
+</html>

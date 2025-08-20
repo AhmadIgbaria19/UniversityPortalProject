@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Students</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="students-list.css" />
+  <script src="students-list.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="titles">
+        <h1>Students</h1>
+        <p class="muted">Browse all registered students</p>
+      </div>
+      <a class="btn ghost" href="admin-dashboard.html"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    </header>
+
+    <section class="card">
+      <div class="toolbar">
+        <input id="searchInput" type="text" placeholder="Search by name or email…" />
+        <span id="countChip" class="chip">0</span>
+      </div>
+
+      <div class="table-wrap">
+        <table id="studentsTable">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th style="width:140px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- rows injected -->
+          </tbody>
+        </table>
+        <p id="msg" class="msg"></p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

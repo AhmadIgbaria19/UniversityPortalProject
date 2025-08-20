@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us | University</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="student-contact.css">
+  <!-- Optional icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <h1>Contact the University</h1>
+    </header>
+
+    <section class="card">
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="text">
+            <div class="label">Address</div>
+            <div class="value">University of Life, 12 Amal Street, Haifa</div>
+          </div>
+          <button class="chip" data-copy="University of Life, 12 Amal Street, Haifa">Copy</button>
+        </div>
+
+        <div class="info-item">
+          <div class="icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="text">
+            <div class="label">Phone</div>
+            <div class="value"><a class="link" href="tel:+97241234567">+972 4-123-4567</a></div>
+          </div>
+          <a class="chip" href="tel:+97241234567">Call</a>
+        </div>
+
+        <div class="info-item">
+          <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="text">
+            <div class="label">Email</div>
+            <div class="value"><a class="link" href="mailto:info@university.ac.il">info@university.ac.il</a></div>
+          </div>
+          <a class="chip" href="mailto:info@university.ac.il">Email</a>
+        </div>
+
+        <div class="info-item">
+          <div class="icon"><i class="fa-regular fa-clock"></i></div>
+          <div class="text">
+            <div class="label">Office Hours</div>
+            <div class="value">Sunday – Thursday, 08:00–16:00</div>
+          </div>
+          <button class="chip" data-copy="Sun–Thu, 08:00–16:00">Copy</button>
+        </div>
+      </div>
+
+      <!-- Optional: add a map embed later
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps?q=Haifa&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          aria-label="University location on map"></iframe>
+      </div>
+      -->
+
+      <div class="actions">
+        <button class="btn ghost" type="button" onclick="goBack()">← Back to Student Dashboard</button>
+      </div>
+
+      <p id="copyToast" class="toast" role="status" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <script>
+    function goBack(){ window.location.href = "student-dashboard.html"; }
+
+    // Copy-to-clipboard for chips with data-copy
+    document.addEventListener("click", async (e) => {
+      const btn = e.target.closest("[data-copy]");
+      if (!btn) return;
+      const text = btn.getAttribute("data-copy") || "";
+      try {
+        await navigator.clipboard.writeText(text);
+        showToast("Copied to clipboard");
+      } catch {
+        showToast("Copy failed");
+      }
+    });
+
+    function showToast(msg){
+      const t = document.getElementById("copyToast");
+      if (!t) return;
+      t.textContent = msg;
+      t.classList.add("show");
+      setTimeout(()=> t.classList.remove("show"), 1400);
+    }
+  </script>
+</body>
+</html>

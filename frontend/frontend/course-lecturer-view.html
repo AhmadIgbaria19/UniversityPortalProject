@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Course Management – Lecturer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="course-lecturer-view.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <h1 id="courseTitle">Manage Course</h1>
+      <div class="topbar-actions">
+        <a href="lecturer-dashboard.html" class="btn ghost">← Back to My Courses</a>
+      </div>
+    </header>
+
+    <main class="content-grid">
+      <!-- Files -->
+      <section class="card">
+        <div class="card-head">
+          <h2>Upload Course Files</h2>
+        </div>
+        <div class="card-body">
+          <div class="upload-row">
+            <input type="file" id="fileInput" />
+            <button class="btn" onclick="uploadFile()">Upload</button>
+          </div>
+          <p id="uploadMsg" class="hint"></p>
+
+          <h3 class="section-sub">📂 Uploaded Files</h3>
+          <ul id="filesList" class="list"></ul>
+        </div>
+      </section>
+
+      <!-- Homework -->
+      <section class="card">
+        <div class="card-head">
+          <h2>Homework</h2>
+        </div>
+        <div class="card-body">
+          <div class="hw-grid">
+            <input type="text" id="homeworkTitle" placeholder="Homework title" />
+            <input type="text" id="homeworkDesc" placeholder="Short description (optional)" />
+            <input type="file" id="hwFile" />
+            <input type="date" id="homeworkDue" />
+            <button class="btn" onclick="addHomework()">➕ Add Homework</button>
+          </div>
+          <p id="hwMsg" class="hint"></p>
+
+          <h3 class="section-sub">Homework List</h3>
+          <ul id="homeworkList" class="list"></ul>
+        </div>
+      </section>
+
+      <!-- Grades -->
+      <section class="card card-wide">
+        <div class="card-head">
+          <h2>Grades</h2>
+        </div>
+        <div class="card-body">
+          <div class="table-wrap">
+            <table id="studentsTable" class="table">
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th>Email</th>
+                  <th>Grade</th>
+                  <th>Save</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Messages -->
+      <section class="card card-wide">
+        <div class="card-head">
+          <h2>Course Forum</h2>
+        </div>
+        <div class="card-body">
+          <div id="messagesBox" class="messages"></div>
+          <textarea id="messageInput" placeholder="Write a message…"></textarea>
+          <button class="btn" onclick="sendMessage()">Send</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="course-lecturer-view.js"></script>
+</body>
+</html>

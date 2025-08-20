@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Course Registration | Student</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="course-registration.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <h1>Course Registration</h1>
+      <div class="tools">
+        <input id="searchInput" type="text" placeholder="Search by course name..." aria-label="Search courses"/>
+        <select id="lecturerFilter" aria-label="Filter by lecturer">
+          <option value="">All lecturers</option>
+        </select>
+      </div>
+    </header>
+
+    <p id="msg" class="msg" role="status"></p>
+
+    <!-- Cards grid -->
+    <section id="coursesGrid" class="cards-grid" aria-live="polite">
+      <!-- Course cards injected here -->
+    </section>
+
+    <div class="footer-actions">
+      <button class="btn ghost" onclick="goBack()">← Back to Dashboard</button>
+    </div>
+  </div>
+
+  <script src="course-registration.js"></script>
+</body>
+</html>

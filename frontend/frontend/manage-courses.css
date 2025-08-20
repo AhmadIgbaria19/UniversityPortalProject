@@ -1,0 +1,113 @@
+:root{
+  --bg:#0b1022; --bg2:#0f172a; --panel:#111827; --text:#e5e7eb;
+  --muted:#94a3b8; --border:#1f2937; --accent:#2563eb; --accent-2:#1d4ed8; --ok:#22c55e; --warn:#f59e0b;
+}
+*{ box-sizing:border-box; }
+html,body{
+  margin:0; height:100%;
+  font-family: Inter,"Segoe UI",Arial,sans-serif;
+  color:var(--text);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+}
+.page{ max-width:1100px; margin:0 auto; padding:24px; }
+
+/* Topbar */
+.topbar{
+  display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.titles h1{ margin:0; font-size:28px; font-weight:800; }
+.titles .muted{ margin:2px 0 0; color:var(--muted); }
+.right-tools{ display:flex; gap:10px; }
+
+/* Card container */
+.card{
+  background: linear-gradient(180deg, rgba(17,24,39,.86), rgba(2,6,23,.9));
+  border:1px solid var(--border); border-radius:18px; padding:18px;
+  box-shadow:0 14px 36px rgba(0,0,0,.35);
+}
+
+/* Toolbar */
+.toolbar{
+  display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:10px;
+}
+.toolbar input, .toolbar select{
+  padding:10px 12px; border-radius:12px; border:1px solid var(--border);
+  background:#0b1022; color:var(--text); outline:none;
+}
+.toolbar input::placeholder{ color:#9aa6b2; }
+.toolbar input:focus, .toolbar select:focus{ border-color:#2a3b8f; background:#0c1228; }
+
+/* Buttons & chips */
+.btn{
+  padding:10px 14px; border-radius:12px; border:1px solid var(--border);
+  background:transparent; color:var(--text); cursor:pointer; text-decoration:none;
+  transition:.18s ease; display:inline-flex; gap:8px; align-items:center;
+}
+.btn:hover{ background:#0b1022; border-color:#2a3b8f; }
+.btn.primary{
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border-color:transparent; color:#fff; box-shadow:0 10px 24px rgba(37,99,235,.25);
+}
+.btn.primary:hover{ filter:brightness(1.08); }
+.chip{
+  padding:6px 10px; border-radius:999px; border:1px solid var(--border);
+  background:#0b1022; color:#e6eefc; font-weight:700;
+}
+
+/* Messages */
+.msg{ margin:0 0 10px; color:var(--muted); }
+.msg.error{ color:#ffb4b4; }
+
+/* Cards grid */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap:14px;
+}
+.course-card{
+  display:flex; flex-direction:column; gap:10px;
+  border:1px solid var(--border); border-radius:16px; padding:16px;
+  background: linear-gradient(180deg, rgba(2,6,23,.8), rgba(15,23,42,.85));
+  box-shadow:0 10px 28px rgba(0,0,0,.25);
+}
+.course-card .title{ display:flex; align-items:center; gap:10px; }
+.course-card .title h3{ margin:0; font-size:18px; color:#e6eefc; }
+.course-card .muted{ color:var(--muted); font-size:14px; }
+.meta{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.badge{
+  display:inline-flex; align-items:center; gap:6px;
+  padding:6px 10px; border-radius:999px; border:1px solid var(--border);
+  background:#0b1022; color:#cfe1ff; font-weight:700; width:max-content;
+}
+.badge.warn{ color:#ffe9b2; border-color:#6b4f1d; background:#2a1f0a; }
+
+/* Card actions */
+.actions{ display:flex; gap:8px; margin-top:6px; flex-wrap:wrap; }
+.actions .btn{ flex:1; justify-content:center; }
+
+/* Modal */
+.modal{ position:fixed; inset:0; display:grid; place-items:center; z-index:50; }
+.modal[hidden]{ display:none; }
+.modal-backdrop{
+  position:fixed; inset:0; background:rgba(0,0,0,.45); backdrop-filter: blur(2px);
+}
+.modal-dialog{
+  position:relative; z-index:51; width:min(480px, calc(100% - 24px));
+  background: linear-gradient(180deg, rgba(17,24,39,.96), rgba(2,6,23,.96));
+  border:1px solid var(--border); border-radius:16px; padding:18px;
+  box-shadow:0 18px 48px rgba(0,0,0,.45);
+}
+.modal-dialog h3{ margin:0 0 6px; }
+.modal-dialog .muted{ margin:0 0 12px; }
+.modal-dialog input{
+  width:100%; padding:10px 12px; border-radius:12px; border:1px solid var(--border);
+  background:#0b1022; color:#e6eefc; outline:none;
+}
+.modal-dialog input:focus{ border-color:#2a3b8f; background:#0c1228; }
+.modal-dialog .actions{ display:flex; gap:10px; justify-content:flex-end; margin-top:12px; }
+
+/* Accessibility focus */
+a.btn:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{
+  outline:2px solid #2a3b8f; outline-offset:2px;
+}

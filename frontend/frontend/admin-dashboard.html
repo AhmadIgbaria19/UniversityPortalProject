@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="admin-dashboard.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="titles">
+        <h1>Admin Dashboard</h1>
+        <p class="muted">Welcome, Admin</p>
+      </div>
+    </header>
+
+    <!-- Cards (anchor links = navigation works even if JS fails) -->
+    <section class="cards">
+      <a class="card" href="users-list.html">
+        <div class="icon"><i class="fa-solid fa-users"></i></div>
+        <div class="content">
+          <h2>Users</h2>
+          <p>View and manage all users and roles.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="card" href="manage-courses.html">
+        <div class="icon"><i class="fa-solid fa-book-open"></i></div>
+        <div class="content">
+          <h2>Courses & Enrollments</h2>
+          <p>Create, edit, and monitor course offers and registrations.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="card" href="students-list.html">
+        <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="content">
+          <h2>Students</h2>
+          <p>Browse enrolled students and their details.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="card" href="admin-messages.html">
+        <div class="icon"><i class="fa-solid fa-inbox"></i></div>
+        <div class="content">
+          <h2>Student Tickets</h2>
+          <p>Review and respond to student messages.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="card danger" href="login.html">
+        <div class="icon"><i class="fa-solid fa-right-from-bracket"></i></div>
+        <div class="content">
+          <h2>Log Out</h2>
+          <p>End session and return to sign-in.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+  </div>
+
+  <!-- Keep the JS for compatibility if you later re-add onclick buttons -->
+  <script src="admin-dashboard.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Grades</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="student-grades.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <h1>Final Grades</h1>
+      <div class="tools">
+        <input id="searchInput" type="text" placeholder="Search by course..." aria-label="Search courses"/>
+        <select id="lecturerFilter" aria-label="Filter by lecturer">
+          <option value="">All lecturers</option>
+        </select>
+        <span id="avgChip" class="chip info">Average: —</span>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="table-wrap">
+        <table id="gradesTable" class="table">
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Lecturer</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filled dynamically -->
+          </tbody>
+        </table>
+      </div>
+
+      <p id="noGrades" class="no-grades" role="status" style="display:none">No grades available at the moment.</p>
+
+      <div class="actions">
+        <button class="btn ghost" onclick="goBack()">← Back to Dashboard</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="student-grades.js"></script>
+</body>
+</html>
