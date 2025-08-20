@@ -34,7 +34,7 @@
 ## 📸 Screens
 
 **Login**  
-![Login](images\login.png)
+![Login](/images/login.png)
 
 **Student — My Courses (cards)**  
 ![Student Dashboard](images\student.png)
