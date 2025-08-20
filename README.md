@@ -26,8 +26,6 @@
 - [Project Structure](#-project-structure)
 - [Data Model](#-data-model)
 - [API Surface](#-api-surface)
-- [Roadmap](#-roadmap)
-- [License](#-license)
 
 <br/>
 
@@ -148,14 +146,6 @@
 - **Admin**: users, lecturers, create course, admin courses (+ add seats), students, student tickets + respond
 
 <br/>
-
-## 🛤️ Roadmap
-
-- JWT (HTTP-only cookies)  
-- Cloud storage for uploads with signed downloads  
-- Search & filters, activity logs, analytics  
-- Tests and CI  
-- Deployment guide
 
 Igbaria Ahmad
 B.Sc. Student in Computer Science
