@@ -72,27 +72,27 @@ Put your screenshots into docs/images/ and replace the file names below.
 
 Login / Landing
 Add a screenshot here
-![Login](docs/images/01-login.png)
+![Login](images/01-login.png)
 
 Student – My Courses
 Add a screenshot here
-![Student Dashboard](docs/images/02-student-dashboard.png)
+![Student Dashboard](images/02-student-dashboard.png)
 
 Course Registration
 Add a screenshot here
-![Course Registration](docs/images/03-course-registration.png)
+![Course Registration](images/03-course-registration.png)
 
 Student Course Page (files / homework / forum)
 Add a screenshot here
-![Student Course](docs/images/04-course-student-view.png)
+![Student Course](images/04-course-student-view.png)
 
 Lecturer – Course Management
 Add a screenshot here
-![Lecturer Dashboard](docs/images/05-lecturer-dashboard.png)
+![Lecturer Dashboard](images/05-lecturer-dashboard.png)
 
 Admin – Dashboard & Tickets
 Add a screenshot here
-![Admin Dashboard](docs/images/06-admin-dashboard.png)
+![Admin Dashboard](images/06-admin-dashboard.png)
 
 Write a short 2–4 line explanation under each image describing what the user can do on that screen.
 
