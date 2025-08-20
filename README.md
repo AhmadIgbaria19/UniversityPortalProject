@@ -33,25 +33,23 @@
 
 ## 📸 Screens
 
-> Images are referenced from `docs/images/`. Keep the file names or adjust paths as needed.
-
 **Login**  
-![Login](docs/images/01-login.png)
+![Login](images\login.png)
 
 **Student — My Courses (cards)**  
-![Student Dashboard](docs/images/02-student-dashboard.png)
+![Student Dashboard](images\student.png)
 
 **Student — Course Registration**  
-![Course Registration](docs/images/03-course-registration.png)
+![Course Registration](images\courses.png)
 
 **Student — Course Page (Files · Homework · Forum)**  
-![Student Course](docs/images/04-course-student-view.png)
+![Student Course](images\coursepage.png)
 
 **Lecturer — Course Management**  
-![Lecturer Dashboard](docs/images/05-lecturer-dashboard.png)
+![Lecturer Dashboard](images\lecturer.png)
 
 **Admin — Dashboard & Tickets**  
-![Admin Dashboard](docs/images/06-admin-dashboard.png)
+![Admin Dashboard](images\admin.png)
 
 <br/>
 
@@ -123,5 +121,41 @@
 
 <br/>
 
-## 🗂️ Project Structure
 
+<br/>
+
+## 📚 Data Model
+
+- **users** — `id`, `full_name`, `email`, `password (bcrypt)`, `role (student|lecturer|admin)`, `created_at`, `last_login`, `image_url?`
+- **courses** — `id`, `name`, `price`, …
+- **course_offers** — `offer_id`, `course_id`, `lecturer_id`, `schedule`, `max_seats`, `remaining_seats`
+- **enrollments** — `student_id`, `offer_id`, `enrolled_at`
+- **course_files** — `id`, `offer_id`, `file_path`, `original_name`, `uploaded_at`
+- **homework** — `id`, `course_offer_id`, `title`, `description`, `due_date`, `file_path?`
+- **submissions** — `id`, `assignment_id`, `student_id`, `file_path`, `submitted_at`, `grade?`
+- **messages** — forum posts per offer (`sender_id`, `sender_role`, `message`, `timestamp`)
+- **grades** — final grades per `student_id` + `offer_id`
+
+<br/>
+
+## 🔌 API Surface
+
+**Base**: `/api`
+
+- **Auth**: `POST /login`
+- **Student**: `GET /my-courses/:id`, `GET /courses`, `POST/DELETE /enroll`, `GET /tuition/:id`, `GET /grades/:id`, files, homework (list/submit), forum (list/post)
+- **Lecturer**: own courses, course students, files CRUD, homework CRUD, submissions & grading, final grades
+- **Admin**: users, lecturers, create course, admin courses (+ add seats), students, student tickets + respond
+
+<br/>
+
+## 🛤️ Roadmap
+
+- JWT (HTTP-only cookies)  
+- Cloud storage for uploads with signed downloads  
+- Search & filters, activity logs, analytics  
+- Tests and CI  
+- Deployment guide
+
+Igbaria Ahmad
+B.Sc. Student in Computer Science
